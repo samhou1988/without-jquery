@@ -71,8 +71,9 @@ function removeClass(element, className) {
     // IE 9+
     // document.getElementById(element).classList.remove(className);
 
+    var reg = new RegExp('(^| )' + className + '( |$)');
     document.getElementById(element).className =
-    document.getElementById(element).className.replace('/^' + className + '$/', '');
+    document.getElementById(element).className.replace(reg, '');
 }
 
 function attr(element, attr, value) {
